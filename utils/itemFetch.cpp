@@ -11,6 +11,8 @@ void prompt(std::string message){
 Item itemAttributesFetch(){
     Item i;
     
+    std::cout << "[LOG] Fetching item's attributes" << std::endl;
+
     // Talk about being stupid!
     std::string hasComments;
     std::string isGoodShit;
@@ -53,6 +55,8 @@ Item itemAttributesFetch(){
         i.isGoodShit = true;
     else
         i.isGoodShit = false;
+
+    std::cout << "[LOG] Item's attributes fetched successfully!" << std::endl;
 
     return i;
 }

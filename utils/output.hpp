@@ -2,6 +2,7 @@
 #define F_OUTPUT
 
 #include <string>
+#include "itemFetch.hpp"
 
 typedef struct colorStruct{
     // Rarities
@@ -17,5 +18,7 @@ typedef struct colorStruct{
 } ColorStruct;
 
 ColorStruct setColors();
+std::string returnColor(ColorStruct, std::string);
+void doOutput(Item);
 
 #endif

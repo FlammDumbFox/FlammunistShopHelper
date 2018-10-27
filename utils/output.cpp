@@ -62,5 +62,5 @@ void doOutput(Item i){
 
     outputFile << "[/URL]" << std::endl;
 
-    std::cout << "[LOG] BBCode for " << i.itemName << " has been output successfully." << std::endl;
+    std::cout << "[LOG] BBCode for " << i.itemName << " has been output successfully!" << std::endl;
 }
