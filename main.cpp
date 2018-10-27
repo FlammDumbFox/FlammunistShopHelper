@@ -5,11 +5,11 @@
 #include "utils/output.hpp"
 
 int main(){
-    std::cout << "This is some Flammunist shit that won't work. Blame Flamm should things not work." << std::endl;
+    std::cout << "Disclaimer: this is some Flammunist shit that won't work. Blame Flamm should things not work." << std::endl;
     std::string k = "1";
     int itemAmount = 0;
     while(k == "1"){
-        if(itemAmount == 0)
+        if(itemAmount != 0)
             std::cout << "[LOG] Fetching another item..." << std::endl;
         
         Item i = itemAttributesFetch();

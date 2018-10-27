@@ -3,10 +3,6 @@
 
 #include <string>
 
-// function prototyping
-
-void prompt(std::string);
-
 typedef struct item{
     std::string itemRarity;
     std::string itemName;
@@ -17,5 +13,6 @@ typedef struct item{
 } Item;
 
 Item itemAttributesFetch();
+void prompt(std::string);
 
 #endif
