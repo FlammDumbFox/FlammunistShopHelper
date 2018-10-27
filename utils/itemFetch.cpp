@@ -10,7 +10,10 @@ void prompt(std::string message){
 
 Item itemAttributesFetch(){
     Item i;
+    
+    // Talk about being stupid!
     std::string hasComments;
+    std::string isGoodShit;
 
     prompt("\t- Item's rarity: ");
     std::getline(std::cin >> std::ws, i.itemRarity);
@@ -41,5 +44,15 @@ Item itemAttributesFetch(){
     } else {
         i.itemComments = "NULL";
     }
+
+    prompt("\t- Is item [GOOD SHIT] (Y/N)? ");
+    std::getline(std::cin >> std::ws, isGoodShit);
+    std::transform(isGoodShit.begin(), isGoodShit.end(), isGoodShit.begin(), ::tolower);
+
+    if(isGoodShit == "y" || isGoodShit == "yes")
+        i.isGoodShit = true;
+    else
+        i.isGoodShit = false;
+
     return i;
 }
