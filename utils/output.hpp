@@ -16,4 +16,6 @@ typedef struct colorStruct{
     std::string colorGoodShit;
 } ColorStruct;
 
+ColorStruct setColors();
+
 #endif
