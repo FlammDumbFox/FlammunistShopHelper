@@ -45,7 +45,7 @@ void doOutput(Item i){
 
     // Opening file
     std::ofstream outputFile;
-    outputFile.open("Output_BBCode.txt");
+    outputFile.open("Output_BBCode.txt", std::ios::app | std::ios::ate);
 
     // Effectively 
     outputFile << "[URL='" << i.imageDirectLink << "'][COLOR=#" << returnColor(cs, i.itemRarity) << "]" << i.itemName << " (Lvl. " << i.levelRequirement << ")[/COLOR]";
@@ -62,5 +62,5 @@ void doOutput(Item i){
 
     outputFile << "[/URL]" << std::endl;
 
-    std::cout << "[LOG] BBCode for " << i.itemName << " has been output successfully!" << std::endl;
+    std::cout << "[LOG] BBCode for [" << i.itemName << "] has been output successfully!" << std::endl;
 }

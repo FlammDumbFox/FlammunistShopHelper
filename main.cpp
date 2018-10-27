@@ -12,10 +12,13 @@ int main(){
         if(itemAmount != 0)
             std::cout << "[LOG] Fetching another item..." << std::endl;
         
+        // Jumps two lines
+        std::cout << "\n\n";
+
         Item i = itemAttributesFetch();
         doOutput(i);
 
-        std::cout << "Type '1' to add another item, anything (LITERALLY ANYTHING) else to exit: ";
+        std::cout << "[LOG] Type '1' to add another item, anything (LITERALLY ANYTHING) else to exit: ";
         std::getline(std::cin >> std::ws, k);
     }
 }

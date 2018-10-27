@@ -24,12 +24,12 @@ Item itemAttributesFetch(){
 
     prompt("\t- Item's name: ");
     std::getline(std::cin >> std::ws, i.itemName);
-
-    prompt("\t- Direct link to image: ");
-    std::getline(std::cin >> std::ws, i.imageDirectLink);
     
     prompt("\t- Item's level requirement: ");
     std::getline(std::cin >> std::ws, i.levelRequirement);
+
+    prompt("\t- Direct link to image: ");
+    std::getline(std::cin >> std::ws, i.imageDirectLink);
 
     prompt("\t- Do you wish to add comments (Y/N)? ");
     std::getline(std::cin >> std::ws, hasComments);
