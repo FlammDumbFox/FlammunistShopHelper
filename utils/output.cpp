@@ -52,7 +52,7 @@ void doOutput(Item i){
 
     // Checks whether item has comments
     if(i.itemComments != "NULL"){
-        outputFile << "[COLOR=#" << cs.colorComments << "]" << i.itemComments << "[/COLOR]";
+        outputFile << "[COLOR=#" << cs.colorComments << "] " << i.itemComments << "[/COLOR]";
     }
     
     // Checks whether item is good shit or not
