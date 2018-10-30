@@ -8,6 +8,21 @@ void prompt(std::string message){
     std::cout << message;
 }
 
+std::string fetchUntilNotEmpty(std::string message){
+    std::string input;
+
+    prompt("\t" + message);
+    std::getline(std::cin, input);
+
+    while(input.length() == 0){
+        std::cout << "[ERROR] Empty line!" << std::endl;
+        prompt("\t" + message);
+        std::getline(std::cin, input);
+    }
+
+    return input;
+}
+
 Item itemAttributesFetch(){
     Item i;
     
@@ -17,42 +32,27 @@ Item itemAttributesFetch(){
     std::string hasComments;
     std::string isGoodShit;
 
-    prompt("\t- Item's rarity: ");
-    std::getline(std::cin >> std::ws, i.itemRarity);
-    // Transforms given item rarity to lower case for simplicity
-    std::transform(i.itemRarity.begin(), i.itemRarity.end(), i.itemRarity.begin(), ::tolower);
-
-    prompt("\t- Item's name: ");
-    std::getline(std::cin >> std::ws, i.itemName);
-    
-    prompt("\t- Item's level requirement: ");
-    std::getline(std::cin >> std::ws, i.levelRequirement);
-
-    prompt("\t- Direct link to image: ");
-    std::getline(std::cin >> std::ws, i.imageDirectLink);
-
-    prompt("\t- Do you wish to add comments (Y/N)? ");
-    std::getline(std::cin >> std::ws, hasComments);
-
-    // Transform "hasComments" to lower case
+    i.itemRarity = fetchUntilNotEmpty("- Rarity: ");
+    i.itemName = fetchUntilNotEmpty("- Name: ");
+    i.levelRequirement = fetchUntilNotEmpty("- Level requirement: ");
+    i.imageDirectLink = fetchUntilNotEmpty("- Direct link to image: ");
+    hasComments = fetchUntilNotEmpty("- Do you wish to add comments (Y/N)? ");
     std::transform(hasComments.begin(), hasComments.end(), hasComments.begin(), ::tolower);
-    
-    if(hasComments == "yes" || hasComments == "y"){
-        prompt("\t- Additional comments: ");
-        std::getline(std::cin >> std::ws, i.itemComments);
-    } else {
+
+    if(hasComments == "yes" || hasComments == "y")
+        i.itemComments = fetchUntilNotEmpty("- Additional comments: ");
+    else
         i.itemComments = "NULL";
-    }
 
-    prompt("\t- Is item [GOOD SHIT] (Y/N)? ");
-    std::getline(std::cin >> std::ws, isGoodShit);
+    isGoodShit = fetchUntilNotEmpty("- Is item [GOOD SHIT] (Y/N)? ");
     std::transform(isGoodShit.begin(), isGoodShit.end(), isGoodShit.begin(), ::tolower);
-
+    
     if(isGoodShit == "y" || isGoodShit == "yes")
         i.isGoodShit = true;
     else
         i.isGoodShit = false;
 
+    std::transform(i.itemRarity.begin(), i.itemRarity.end(), i.itemRarity.begin(), ::tolower);
     std::cout << "[LOG] Item's attributes fetched successfully!" << std::endl;
 
     return i;

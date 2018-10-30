@@ -12,6 +12,7 @@ typedef struct item{
     std::string itemComments;
 } Item;
 
+std::string fetchUntilNotEmpty(std::string);
 Item itemAttributesFetch();
 void prompt(std::string);
 

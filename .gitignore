@@ -12,6 +12,7 @@
 *.vb
 *.wsf
 *.txt
+makefile
+Output_BBCode.txt
 
-
-# End of https://www.gitignore.io/api/executable
+# End of https://www.gitignore.io/api/executable/

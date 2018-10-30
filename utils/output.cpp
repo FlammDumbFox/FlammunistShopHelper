@@ -51,16 +51,15 @@ void doOutput(Item i){
     outputFile << "[URL='" << i.imageDirectLink << "'][COLOR=#" << returnColor(cs, i.itemRarity) << "]" << i.itemName << " (Lvl. " << i.levelRequirement << ")[/COLOR]";
 
     // Checks whether item has comments
-    if(i.itemComments != "NULL"){
+    if(i.itemComments != "NULL")
         outputFile << "[COLOR=#" << cs.colorComments << "] " << i.itemComments << "[/COLOR]";
-    }
     
     // Checks whether item is good shit or not
-    if(i.isGoodShit){
+    if(i.isGoodShit)
         outputFile << "[COLOR=#" << cs.colorGoodShit << "][GOOD SHIT]" << "[/COLOR]";
-    }
+    
 
-    outputFile << "[/URL]" << std::endl;
+    outputFile << "[/URL]\n" << std::endl;
 
     std::cout << "[LOG] BBCode for [" << i.itemName << "] has been output successfully!" << std::endl;
 }
